@@ -1,0 +1,37 @@
+文档标题: 模板制作要求
+责任编辑: Sin.CS
+起稿日期: 2006-01-03
+
+A) 基本要求:
+
+	1) 模板编码必须为UTF-8格式
+
+	   PS:如何指定编码为UTF-8?
+	   a) 需要在<head>区域内指定编码
+	      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	   b) 保存文件的时候,指定编码为UTF-8
+	   c) 例: 记事本打开文件 -> 另存为(A)... -> 在"编码(E)"选项里选择UTF-8
+
+	2) 可支持的模板文件扩展名: asp,htm,html
+
+
+B) 模板文件夹结构
+
+	[DIR]		images
+	[DIR]		inside			内部模板目录(要求见C)
+	-file		default.htm		页面框架模板(建议用utf-8编码)
+
+
+C) inside目录结构(内部模板)
+
+	[DIR]		onepage			单页面内容页
+	[DIR]		article[list]		文章列表模板
+	[DIR]		article[page]		文章内容页模板
+	[DIR]		bbs[list]		论坛BBS列表模板
+	[DIR]		bbs[page]		论坛BBS帖子页模板
+	[DIR]		other			其他模板,见D
+
+
+D) other目录结构
+
+	-file		search.htm		嵌入搜索代码
