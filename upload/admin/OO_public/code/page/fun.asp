@@ -82,7 +82,7 @@ public sub list()
 		Il "]"
 		if len(listid)>0 and cstr(listid)<>"0" then
 			Il "["
-			Il "<a href=""index.asp?action=field&listid="&listid&""">"&lang("common/list")&"</a>"
+			Il "<a href=""index.asp?action=field&listid="&listid&""">"&lang("common/listdir")&"</a>"
 			if conn.execute("select count(listid) from king__{OO}_list where listid1="&listid&";")(0)>0 then
 				Il "<a href=""index.asp?listid="&listid&""">"&lang("common/listdir")&"</a>"
 			end if

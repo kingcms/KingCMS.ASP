@@ -78,19 +78,18 @@ end sub
 private sub update()
 	king.head "admin",0
 	dim sql
-	if len(king.getsql("kingoo_config","kversion"))=0 then
-		'kingoo_config
-		sql="systemname nvarchar(10),"
-		sql=sql&"kversion real not null default 1.01"
-		conn.execute "create table kingoo_config ("&sql&")"
-		conn.execute "insert into kingoo_config (systemname) values ('KingCMS')"
-		'kingoo
-		sql="iskeywords int not null default 1,"
-		sql=sql&"isdescription int not null default 1,"
-		sql=sql&"ispath int not null default 1"
-		conn.execute "alter table kingoo add "&sql&" ;"
-		conn.execute "update kingoo set iskeywords=1,isdescription=1,ispath=1;"
-	end if
+	on error resume next
+	'kingoo_config
+	sql="systemname nvarchar(10),"
+	sql=sql&"kversion real not null default 1.01"
+	conn.execute "create table kingoo_config ("&sql&")"
+	conn.execute "insert into kingoo_config (systemname) values ('KingCMS')"
+	'kingoo
+	sql="iskeywords int not null default 1,"
+	sql=sql&"isdescription int not null default 1,"
+	sql=sql&"ispath int not null default 1"
+	conn.execute "alter table kingoo add "&sql&" ;"
+	conn.execute "update kingoo set iskeywords=1,isdescription=1,ispath=1;"
 
 end sub
 '  *** Copyright &copy KingCMS.com All Rights Reserved ***
